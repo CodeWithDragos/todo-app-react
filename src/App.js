@@ -1,23 +1,41 @@
-import logo from './logo.svg';
-import './App.css';
+import { useState } from "react";
+import "./App.css";
 
 function App() {
+  const [todos, setTodos] = useState([]);
+  const [newTodo, setNew] = useState("");
+
+  const handleChange = (e) => {
+    const newTodo = e.target.value;
+    setNew(newTodo);
+  };
+
+  const handleClick = () => {
+    const newTodos = [...todos, newTodo];
+    if (newTodo && newTodo.length) {
+      setNew("");
+      setTodos(newTodos);
+    }
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <div className="add-todo-box">
+        <input
+          placeholder="Add a todo here..."
+          className="input"
+          onChange={handleChange}
+          type="text"
+          value={newTodo}
+        ></input>
+        <button className="button" onClick={handleClick}>
+          Add todo
+        </button>
+      </div>
+      <h3>Todos:</h3>
+      {todos.map((todo) => (
+        <div className="todo">{todo}</div>
+      ))}
     </div>
   );
 }
