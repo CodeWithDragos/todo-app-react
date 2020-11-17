@@ -45,7 +45,7 @@ function App() {
         </button>
       </form>
       {isError && <p class="validation-error">The todo cannot be empty!</p>}
-      <h3>Todos:</h3>
+      <p className="todos-title">Todos:</p>
       {todos.map((todo) => (
         <div className="todo">{todo}</div>
       ))}

@@ -1,18 +1,22 @@
 .todo {
-  border: 1px solid salmon;
-  background-color: salmon;
+  border: 1px solid #26de81;
+  background-color: #26de81;
   color: white;
   border-radius: 6px;
   margin: 0.5rem 0;
-  padding: 0.5rem 1rem;
+  padding: 1rem 1rem;
   width: 100%;
   text-transform: capitalize;
+  font-weight: 700;
+  font-size: 18px;
 }
 
-.add-todo-box {
+.add-todo-form {
   display: flex;
   justify-content: center;
   align-items: center;
+  width: 100%;
+  margin: 0.5rem 0;
 }
 
 .input {
@@ -20,27 +24,29 @@
   font-size: 16px;
   border-radius: 6px;
   border: 1px solid gainsboro;
-  height: 32px;
+  height: 45px;
+  flex-grow: 1;
 }
 
-.button {
+.submit-button {
   padding: 0.25rem 1rem;
   font-size: 16px;
   font-weight: 500;
   border-radius: 6px;
-  border: 1px solid seagreen;
+  border: 1px solid #fa8231;
   color: white;
-  background-color: seagreen;
+  background-color: #fa8231;
   margin-left: 0.5rem;
+  height: 45px;
 }
 
-.button:hover {
-  color: seagreen;
+.submit-button:hover {
+  color: #fa8231;
   background-color: white;
   cursor: pointer;
 }
 
-.button:focus,
+.submit-button:focus,
 .input:focus {
   outline: none;
 }
@@ -49,4 +55,11 @@
   max-width: 350px;
   margin-left: auto;
   margin-right: auto;
+}
+
+.todos-title {
+  color: gray;
+  font-size: 14px;
+  font-weight: 600;
+  margin: 0.25rem 0;
 }
