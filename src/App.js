@@ -15,7 +15,8 @@ function App() {
     setNew(currentTodo);
   };
 
-  const handleClick = () => {
+  const handleSubmit = (e) => {
+    e.preventDefault();
     if (currentTodo && currentTodo.length) {
       // Let's create a new array of todos containing the current todo and the old ones using the spread operator ...
       const newTodos = [...todos, currentTodo];
@@ -30,8 +31,8 @@ function App() {
   };
 
   return (
-    <div>
-      <div className="add-todo-box">
+    <div class="root">
+      <form onSubmit={handleSubmit} className="add-todo-form">
         <input
           placeholder="Add a todo here..."
           className="input"
@@ -39,11 +40,11 @@ function App() {
           type="text"
           value={currentTodo}
         ></input>
-        <button className="button" onClick={handleClick}>
+        <button className="submit-button" type="submit">
           Add todo
         </button>
-      </div>
-      {isError && <p>The todo cannot be empty!</p>}
+      </form>
+      {isError && <p class="validation-error">The todo cannot be empty!</p>}
       <h3>Todos:</h3>
       {todos.map((todo) => (
         <div className="todo">{todo}</div>
