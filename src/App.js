@@ -1,10 +1,6 @@
-import { useState } from "react";
 import "./App.css";
 
 function App() {
-  const [todos, setTodos] = useState([]);
-  const [newTodo, setNew] = useState("");
-
   return (
     <div>
       <div className="add-todo-box">
