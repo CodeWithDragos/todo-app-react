@@ -1,6 +1,6 @@
 # To Do App with React 🚀
 
-The goal of this assignment is to build a vanilla JavaScript weather app.
+The goal of this assignment is to build a React Todos App.
 
 Use the provided markup as a guide.
 
