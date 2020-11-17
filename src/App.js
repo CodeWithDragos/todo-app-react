@@ -3,17 +3,21 @@ import "./App.css";
 
 function App() {
   const [todos, setTodos] = useState([]);
-  const [newTodo, setNew] = useState("");
+  const [currentTodo, setNew] = useState("");
 
   const handleChange = (e) => {
-    const newTodo = e.target.value;
-    setNew(newTodo);
+    // We capture the value of the input and set it as current todo
+    const currentTodo = e.target.value;
+    setNew(currentTodo);
   };
 
   const handleClick = () => {
-    const newTodos = [...todos, newTodo];
-    if (newTodo && newTodo.length) {
+    if (currentTodo && currentTodo.length) {
+      // Let's create a new array of todos containing the current todo and the old ones using the spread operator ...
+      const newTodos = [...todos, currentTodo];
+      // set current todo to "" to clean the input field
       setNew("");
+      // Set the todos to the new todos array
       setTodos(newTodos);
     }
   };
@@ -26,7 +30,7 @@ function App() {
           className="input"
           onChange={handleChange}
           type="text"
-          value={newTodo}
+          value={currentTodo}
         ></input>
         <button className="button" onClick={handleClick}>
           Add todo
