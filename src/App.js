@@ -31,31 +31,34 @@ function App() {
   };
 
   return (
-    <div className="root">
-      <div className="dashboard">
-        <p className="in-progress">{todos.length}</p>
-        <p>in progress</p>
-      </div>
-      <form onSubmit={handleSubmit} className="add-todo-form">
-        <div className="input-row">
-          <input
-            placeholder="Add a todo here..."
-            className="input"
-            onChange={handleChange}
-            type="text"
-            value={currentTodo}
-          ></input>
-          <button className="submit-button" type="submit">
-            Add todo
-          </button>
+    <>
+      <div class="header">Dragos's Tasks</div>
+      <div className="root">
+        <div className="dashboard">
+          <p className="in-progress">{todos.length}</p>
+          <p>in progress</p>
         </div>
-        {isError && <p class="validation-error">The todo cannot be empty!</p>}
-      </form>
-      <p className="todos-title">Todos:</p>
-      {todos.map((todo) => (
-        <div className="todo">{todo}</div>
-      ))}
-    </div>
+        <form onSubmit={handleSubmit} className="add-todo-form">
+          <div className="input-row">
+            <input
+              placeholder="Add a todo here..."
+              className="input"
+              onChange={handleChange}
+              type="text"
+              value={currentTodo}
+            ></input>
+            <button className="submit-button" type="submit">
+              Add todo
+            </button>
+          </div>
+          {isError && <p class="validation-error">The todo cannot be empty!</p>}
+        </form>
+        <p className="todos-title">Todos:</p>
+        {todos.map((todo) => (
+          <div className="todo">{todo}</div>
+        ))}
+      </div>
+    </>
   );
 }
 
