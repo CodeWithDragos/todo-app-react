@@ -12,11 +12,8 @@
 }
 
 .add-todo-form {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  margin: 0.5rem 0;
+  margin-bottom: 2rem;
+  position: relative;
 }
 
 .input {
@@ -62,4 +59,20 @@
   font-size: 14px;
   font-weight: 600;
   margin: 0.25rem 0;
+}
+
+.validation-error {
+  font-size: 11px;
+  color: red;
+  bottom: -1.5rem;
+  position: absolute;
+  margin: 0;
+}
+
+.input-row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin: 0.5rem 0;
 }

@@ -33,18 +33,20 @@ function App() {
   return (
     <div class="root">
       <form onSubmit={handleSubmit} className="add-todo-form">
-        <input
-          placeholder="Add a todo here..."
-          className="input"
-          onChange={handleChange}
-          type="text"
-          value={currentTodo}
-        ></input>
-        <button className="submit-button" type="submit">
-          Add todo
-        </button>
+        <div class="input-row">
+          <input
+            placeholder="Add a todo here..."
+            className="input"
+            onChange={handleChange}
+            type="text"
+            value={currentTodo}
+          ></input>
+          <button className="submit-button" type="submit">
+            Add todo
+          </button>
+        </div>
+        {isError && <p class="validation-error">The todo cannot be empty!</p>}
       </form>
-      {isError && <p class="validation-error">The todo cannot be empty!</p>}
       <p className="todos-title">Todos:</p>
       {todos.map((todo) => (
         <div className="todo">{todo}</div>
