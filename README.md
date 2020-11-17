@@ -26,8 +26,8 @@ Your objective is to add functionality to the app.
 
 Check the live demo here: [Live Demo](https://code-with-dragos-react.netlify.app/).
 
-![todos app demo](./solved-todos.png)
-![todos app with error](./solved-todos-error.png)
+![todos app demo](./solved-todos.png =250x)
+![todos app with error](./solved-todos-error.png =250x)
 
 ## Hints
 
