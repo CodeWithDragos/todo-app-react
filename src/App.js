@@ -31,9 +31,13 @@ function App() {
   };
 
   return (
-    <div class="root">
+    <div className="root">
+      <div className="dashboard">
+        <p className="in-progress">{todos.length}</p>
+        <p>in progress</p>
+      </div>
       <form onSubmit={handleSubmit} className="add-todo-form">
-        <div class="input-row">
+        <div className="input-row">
           <input
             placeholder="Add a todo here..."
             className="input"
